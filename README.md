@@ -13,3 +13,16 @@
 12. create function upCase using $filter service named 'uppercase'
 13. for $scope.name call upCase function with name as a parameter for function
 14. add ng-blur (when textbox lose focus) attribute, it's value is 'upper();' function
+
+***
+##### Protecting Dependency Injection from Minification
+###### 1st opportunity
+15. create array from second parameter in controller
+16. add in array $scope and filter (it's tell Angular in which order should appear this arguments in function DIController)
+###### 2nd opportunity
+17. create function inside controller instead out of controller
+###### 3rd opportunity (best)
+18. create $inject - property of DIController. It's an array that contains 2 elements: scope and filter 
+
+***
+https://www.javascriptminifier.com/
